@@ -13,10 +13,10 @@ html, body{
     top: calc(50% - 250px);
 
 
-    background: red;
+    background: #e2ba7d;
     width: 900px;
     height: 500px;
-    perspective: 800px;
+    perspective: 700px;
 }
 
 .machine_container *{
@@ -82,4 +82,72 @@ html, body{
 .machine_door_bottomslice{
     background: #6a697a;
     transform: rotateX(90deg) translateY(-10px) translateZ(-490px);
+}
+
+
+
+/*
+
+    MACHINE DEPTH
+
+*/
+
+.machine_depth{
+    position: absolute;
+    left: 60px;
+    top: 60px;
+    right: 260px;
+    bottom: 60px;
+    background: rgba(255, 0, 0, .3);
+    
+    /* 580 x 380 */
+    perspective: -300px;
+    z-index: -1;
+}
+
+.machine_depth_left, .machine_depth_right, .machine_depth_top, .machine_depth_bottom, .machine_depth_back{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .6);
+}
+
+.machine_depth_left{
+    transform: rotateY(90deg) translateZ(-250px) translateX(250px);
+}
+
+.machine_depth_right{
+    transform: rotateY(-90deg) translateZ(-250px) translateX(-250px);
+}
+
+.machine_depth_top{
+    transform: rotateX(-90deg) translateZ(-250px) translateY(250px);
+}
+
+.machine_depth_bottom{
+    transform: rotateX(-90deg) translateZ(250px) translateY(250px);
+}
+
+.machine_depth_back{
+    transform: rotateY(0deg) translateZ(-250px);
+}
+
+/*
+
+    COLUMN
+
+*/
+.machine_column{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #4a384b;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    width: 200px;
+    z-index: -1;
 }
