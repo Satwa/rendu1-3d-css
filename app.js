@@ -17,3 +17,9 @@ document.querySelectorAll(".time_selector div:not(.time_selector_empty)").forEac
         }
     })
 })
+
+/*
+
+    PUT PASTABOX here: .machine_tray
+
+ */

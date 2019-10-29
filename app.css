@@ -121,29 +121,44 @@ html, body{
     left:0;
     bottom: 0;
     right: 0;
-    background: rgba(0, 0, 0, .6);
+    background: rgba(0, 0, 0, .3);
+    border: 1px solid #000;
 }
 
 .machine_depth_left{
     transform: rotateY(90deg) translateZ(-290px) translateX(calc(var(--depth-width) / 2));
+    border-left: 30px solid #000;
 }
 
 .machine_depth_right{
     transform: rotateY(-90deg) translateZ(-290px) translateX(calc(var(--depth-width) / -2));
+    border-right: 60px solid #000;
 }
 
 .machine_depth_top{
     height: 580px;
     transform: rotateX(-90deg) translateZ(calc(var(--depth-width) / -2)) translateY(calc(var(--depth-width) / 2));
+    border-top: 60px solid #000;
 }
 
 .machine_depth_bottom{
     height: 580px;
     transform: rotateX(-90deg) translateZ(calc(var(--depth-width) / 6.5)) translateY(calc(var(--depth-width) / 2));
+    border-top: 60px solid #000;
 }
 
 .machine_depth_back{
     transform: rotateY(0deg) translateZ(calc(var(--depth-width) / -1));
+}
+
+.machine_tray{
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    width: 300px;    
+    height: 300px;    
+    border-radius: 50%;
+    background: #cccccc;
 }
 
 /*
