@@ -133,11 +133,13 @@ html, body{
 }
 
 .machine_depth_top{
-    transform: rotateX(-90deg) translateZ(calc(var(--depth-height) / -2)) translateY(calc(var(--depth-height) / 2));
+    height: 580px;
+    transform: rotateX(-90deg) translateZ(calc(var(--depth-width) / -2)) translateY(calc(var(--depth-width) / 2));
 }
 
 .machine_depth_bottom{
-    transform: rotateX(-90deg) translateZ(calc(var(--depth-height) / 2)) translateY(calc(var(--depth-height) / 2));
+    height: 580px;
+    transform: rotateX(-90deg) translateZ(calc(var(--depth-width) / 6.5)) translateY(calc(var(--depth-width) / 2));
 }
 
 .machine_depth_back{
