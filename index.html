@@ -10,7 +10,7 @@
 <body>
     <h1>Pick a Pasta!</h1>
     <div class="machine_container">
-        <div class="machine_door_container">
+        <div class="machine_door_container is-open">
             <div class="machine_door_front"></div>
             <div class="machine_door_back"></div>
             <div class="machine_door_slice"></div>
@@ -24,7 +24,14 @@
             <div class="machine_depth_top"></div>
             <div class="machine_depth_bottom">
                 <div class="machine_tray">
-                    <div class="trying-inside"></div>
+                    <!-- <div class="trying-inside"></div> -->
+                <div class="pastabox_container">
+                    <div class="box_face bottom"></div>
+                    <div class="box_face z-neg"></div>
+                    <div class="box_face z-pos"></div>
+                    <div class="box_face x-neg"></div>
+                    <div class="box_face x-pos"></div>
+                </div>
                 </div>
             </div>
             <div class="machine_depth_back"></div>
@@ -48,6 +55,13 @@
             <div class="door_opener"></div>
         </div> <!-- /column-->
     </div>
+
+    <dov class="pastabox_selector">
+        <div class="orange_pastabox" data-color="orange"></div>
+        <div class="yellow_pastabox" data-color="yellow"></div>
+        <div class="green_pastabox"  data-color="green"></div>
+    </dov>
+
 
     <script src="app.js"></script>
 </body>

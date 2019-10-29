@@ -25,9 +25,7 @@ h1{
     height: 500px;
     perspective: 2000px;
 
-    
-    
-    /* transform: scale(.8); */
+    transform: scale(.8);
 }
 .machine_container *{
     transform-style: preserve-3d;
@@ -134,24 +132,24 @@ h1{
 
 .machine_depth_left{
     transform: rotateY(90deg) translateZ(-290px) translateX(calc(var(--depth-width) / 2));
-    border-left: 30px solid #000;
+    border-left: 30px solid #d1a96c;
 }
 
 .machine_depth_right{
     transform: rotateY(-90deg) translateZ(-290px) translateX(calc(var(--depth-width) / -2));
-    border-right: 60px solid #000;
+    border-right: 60px solid #d1a96c;
 }
 
 .machine_depth_top{
     height: 580px;
     transform: rotateX(-90deg) translateZ(calc(var(--depth-width) / -2)) translateY(calc(var(--depth-width) / 2));
-    border-top: 60px solid #000;
+    border-top: 60px solid #d1a96c;
 }
 
 .machine_depth_bottom{
     height: 580px;
     transform: rotateX(-90deg) translateZ(calc(var(--depth-width) / 6.5)) translateY(calc(var(--depth-width) / 2));
-    border-top: 60px solid #000;
+    border-top: 60px solid #d1a96c;
 }
 
 .machine_depth_back{
@@ -177,7 +175,7 @@ h1{
     animation-play-state: running;
 }
 
-.machine_tray > div{
+.machine_tray .trying-inside{
     position: absolute;
     left: calc(50% - 60px);
     top: calc(50% - 150px);
@@ -187,6 +185,14 @@ h1{
     width: 120px;
     height: 300px;
     background: red;
+}
+
+.machine_tray .pastabox_container{
+    position: absolute;
+    left: calc(50% - 150px);
+    top: calc(50% - 150px);
+
+    transform: rotateX(90deg) translateY(-150px);
 }
 
 /*
@@ -274,6 +280,100 @@ h1{
     -moz-box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,0.75);
     box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,0.75);
 }
+
+/**
+
+    PASATABOX
+
+**/
+.pastabox_container{
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 150px);
+    width: 300px;
+    height: 300px;
+    transform: rotateY(60deg);
+}
+.pastabox_container .box_face:not(.bottom){
+    border-top: 300px solid transparent; /* rgba(0, 0, 255, .3) */
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-radius: 100px;
+}
+
+.pastabox_container.orange .box_face{
+    border-top-color: orange;
+}
+
+.pastabox_container.green .box_face{
+    border-top-color: green;
+}
+
+.pastabox_container.yellow .box_face{
+    border-top-color: yellow;
+}
+
+.pastabox_container .box_face{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+}
+
+.pastabox_container .box_face.bottom{
+    left: calc(50% - 100px);
+    background: transparent;
+    transform: rotateX(-90deg) translateZ(195px);
+    width: 200px;
+    height: 200px;
+    /* border-radius: 50px; */
+}
+
+.pastabox_container .box_face.z-neg{
+    transform: rotateY(-90deg) translateZ(120px) rotateX(-10deg);
+}
+.pastabox_container .box_face.z-pos{
+    transform: rotateY(90deg) translateZ(120px) rotateX(-10deg);
+}
+.pastabox_container .box_face.x-neg{
+    transform: rotateX(0deg) translateZ(120px) rotateX(-10deg);
+}
+.pastabox_container .box_face.x-pos{
+    transform: rotateY(-180deg) translateZ(120px) rotateX(-10deg);
+}
+
+
+/**
+
+
+    Selectors
+
+
+**/
+.pastabox_selector{
+    position: absolute;
+    bottom: 50px;
+    width: 500px;
+    left: calc(50% - 250px);
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.pastabox_selector div{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.pastabox_selector .orange_pastabox{
+    background: orange;
+}
+.pastabox_selector .yellow_pastabox{
+    background: yellow;
+}
+.pastabox_selector .green_pastabox{
+    background: green;
+}
+
 
 /**
 
