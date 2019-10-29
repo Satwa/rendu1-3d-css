@@ -16,7 +16,9 @@ html, body{
     background: #e2ba7d;
     width: 900px;
     height: 500px;
-    perspective: 700px;
+    perspective: 2000px;
+
+    transform: scale(.5);
 }
 
 .machine_container *{
@@ -29,8 +31,12 @@ html, body{
     left:0;
     bottom: 0;
     right: 200px;
-    transform: rotateY(-60deg); /* -45deg */
+    transform: rotateY(0deg);
     transform-origin: left center;
+    transition: transform 1s;
+}
+.machine_door_container.is-open{
+    transform: rotateY(-90deg);
 }
 
 .machine_door_front{
@@ -98,7 +104,7 @@ html, body{
     top: 60px;
     right: 260px;
     bottom: 60px;
-    background: rgba(255, 0, 0, .3);
+    /* background: rgba(255, 0, 0, .3); */
     
     /* 580 x 380 */
     perspective: -300px;
@@ -115,23 +121,23 @@ html, body{
 }
 
 .machine_depth_left{
-    transform: rotateY(90deg) translateZ(-250px) translateX(250px);
+    transform: rotateY(90deg) translateZ(-300px) translateX(300px);
 }
 
 .machine_depth_right{
-    transform: rotateY(-90deg) translateZ(-250px) translateX(-250px);
+    transform: rotateY(-90deg) translateZ(-300px) translateX(-300px);
 }
 
 .machine_depth_top{
-    transform: rotateX(-90deg) translateZ(-250px) translateY(250px);
+    transform: rotateX(-90deg) translateZ(-190px) translateY(300px);
 }
 
 .machine_depth_bottom{
-    transform: rotateX(-90deg) translateZ(250px) translateY(250px);
+    transform: rotateX(-90deg) translateZ(200px) translateY(300px);
 }
 
 .machine_depth_back{
-    transform: rotateY(0deg) translateZ(-250px);
+    transform: rotateY(0deg) translateZ(-580px) translateX(3px);
 }
 
 /*
@@ -150,4 +156,28 @@ html, body{
     font-size: 20px;
     width: 200px;
     z-index: -1;
+}
+.door_opener{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    height: 60px;
+    background: #6d5a6e;
+    /* border: 5px solid #9f45a3; */
+    transition: box-shadow .1s;
+    cursor: pointer;
+    will-change: box-shadow;
+}
+
+.door_opener:hover{
+    -webkit-box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,.3);
+    -moz-box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,.3);
+    box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,.3);
+}
+
+.door_opener:active{
+    -webkit-box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,0.75);
 }
