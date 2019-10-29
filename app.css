@@ -5,6 +5,13 @@
 }
 html, body{
     background: #f9e2b3;
+    font-family: sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin: 20px;
+    color: #da7a4e;
 }
 
 .machine_container{
@@ -159,6 +166,27 @@ html, body{
     height: 300px;    
     border-radius: 50%;
     background: #cccccc;
+
+    animation-name: rotate-inside-chamber;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+}
+.machine_tray.is-active{
+    animation-play-state: running;
+}
+
+.machine_tray > div{
+    position: absolute;
+    left: calc(50% - 60px);
+    top: calc(50% - 150px);
+
+    transform: rotateX(90deg) translateY(-150px);
+
+    width: 120px;
+    height: 300px;
+    background: red;
 }
 
 /*
@@ -245,4 +273,22 @@ html, body{
     -webkit-box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,0.75);
     box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,0.75);
+}
+
+/**
+
+    KEYFRAMES
+
+**/
+
+@keyframes rotate-inside-chamber{
+    0%{
+        transform: rotate(0deg)
+    }
+    50%{
+        transform: rotate(180deg)
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }

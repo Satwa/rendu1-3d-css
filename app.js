@@ -1,8 +1,4 @@
-/******/ document.querySelector(".machine_door_container").classList.toggle("is-open")
-
 const timeScreenElement = document.querySelector(".time_screen")
-
-
 
 document.querySelector(".door_opener").addEventListener("click", () => {
     document.querySelector(".machine_door_container").classList.toggle("is-open")
@@ -21,5 +17,7 @@ document.querySelectorAll(".time_selector div:not(.time_selector_empty)").forEac
 /*
 
     PUT PASTABOX here: .machine_tray
+    
+    document.querySelector(".machine_tray").classList.toggle("is-active")
 
  */
