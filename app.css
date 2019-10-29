@@ -18,11 +18,7 @@ html, body{
     height: 500px;
     perspective: 2000px;
 
-    transform: scale(.5);
-}
-
-.machine_container *{
-    transform-style: preserve-3d;
+    /* transform: scale(.8); */
 }
 
 .machine_door_container{
@@ -107,8 +103,11 @@ html, body{
     /* background: rgba(255, 0, 0, .3); */
     
     /* 580 x 380 */
-    perspective: -300px;
+    perspective: -580px;
     z-index: -1;
+
+    --depth-width: 580px;
+    --depth-height: 380px;
 }
 
 .machine_depth_left, .machine_depth_right, .machine_depth_top, .machine_depth_bottom, .machine_depth_back{
@@ -121,23 +120,23 @@ html, body{
 }
 
 .machine_depth_left{
-    transform: rotateY(90deg) translateZ(-300px) translateX(300px);
+    transform: rotateY(90deg) translateZ(-290px) translateX(calc(var(--depth-width) / 2));
 }
 
 .machine_depth_right{
-    transform: rotateY(-90deg) translateZ(-300px) translateX(-300px);
+    transform: rotateY(-90deg) translateZ(-290px) translateX(calc(var(--depth-width) / -2));
 }
 
 .machine_depth_top{
-    transform: rotateX(-90deg) translateZ(-190px) translateY(300px);
+    transform: rotateX(-90deg) translateZ(calc(var(--depth-height) / -2)) translateY(calc(var(--depth-height) / 2));
 }
 
 .machine_depth_bottom{
-    transform: rotateX(-90deg) translateZ(200px) translateY(300px);
+    transform: rotateX(-90deg) translateZ(calc(var(--depth-height) / 2)) translateY(calc(var(--depth-height) / 2));
 }
 
 .machine_depth_back{
-    transform: rotateY(0deg) translateZ(-580px) translateX(3px);
+    transform: rotateY(0deg) translateZ(calc(var(--depth-width) / -1));
 }
 
 /*
@@ -157,6 +156,50 @@ html, body{
     width: 200px;
     z-index: -1;
 }
+
+.time_screen{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    height: 60px;
+    background: rgba(0, 0, 0, .4);
+    color: #00b297;
+    padding: 20px;
+    overflow: hidden;
+}
+
+
+.time_selector{
+    position: absolute;
+    top: 100px;
+    bottom: 100px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.time_selector div{
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    line-height: 35px;
+    text-align: center;
+    background: rgba(255, 255, 255, .3);
+    cursor: pointer;
+}
+.time_selector div.time_selector_empty{
+    background: none;
+    cursor: default;
+}
+.time_selector div:hover{
+    -webkit-box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,.3);
+    -moz-box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,.3);
+    box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,.3);
+}
+
+
 .door_opener{
     position: absolute;
     bottom: 20px;
